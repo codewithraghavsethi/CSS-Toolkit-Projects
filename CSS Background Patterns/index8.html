@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+  margin: 0;
+  height: 100vh;
+  background: #000;
+}
+
+.rainbow-grid {
+  width: 100%;
+  height: 100%;
+  background-image: 
+    repeating-linear-gradient(0deg, red 0 20px, orange 20px 40px, yellow 40px 60px, green 60px 80px, blue 80px 100px, indigo 100px 120px, violet 120px 140px),
+    repeating-linear-gradient(90deg, red 0 20px, orange 20px 40px, yellow 40px 60px, green 60px 80px, blue 80px 100px, indigo 100px 120px, violet 120px 140px);
+  background-size: 140px 140px;
+  animation: moveGrid 5s linear infinite;
+}
+
+@keyframes moveGrid {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 140px 140px;
+  }
+}
+
+</style>
+<body>
+    <div class="rainbow-grid"></div>
+</body>
+</html>
