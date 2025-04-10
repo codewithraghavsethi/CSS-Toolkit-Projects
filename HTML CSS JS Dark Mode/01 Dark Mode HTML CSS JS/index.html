@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Dark Mode Toggle</title>
+    <style>
+        body {
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .dark-mode {
+            background-color: #1a202c;
+            color: #ffffff;
+        }
+        .toggle-btn {
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .light-btn {
+            background-color: #2d3748;
+            color: white;
+        }
+        .dark-btn {
+            background-color: #e2e8f0;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex items-center justify-center h-screen">
+        <button id="toggleDarkMode" class="toggle-btn light-btn">Toggle Dark Mode</button>
+    </div>
+    
+    <script>
+        const body = document.body;
+        const toggleButton = document.getElementById('toggleDarkMode');
+        
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                toggleButton.classList.remove('light-btn');
+                toggleButton.classList.add('dark-btn');
+            } else {
+                toggleButton.classList.remove('dark-btn');
+                toggleButton.classList.add('light-btn');
+            }
+        });
+    </script>
+</body>
+</html>
